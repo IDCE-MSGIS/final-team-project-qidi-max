@@ -45,11 +45,15 @@ weather_forecast = soup.findAll("li", {"class": "forecast-tombstone"})
 for i in weather_forecast:
     i = i.text
     forecast.append(i)
-    forecast.replace()
-
-
-   
-
-# Print list to remove unicode characters
+    
 for day in forecast:
-    print day
+    forecast_list = day.split('\n\n')
+    for M in forecast_list:
+        M = M.replace('\n',':')
+        M = M.replace('High',', High')
+        M = M.replace('Low',', Low')
+        M = M.replace('Chance','Chance ')
+        M = M.replace('Likely',' Likely')
+        M = M.replace('then',' then ')
+        M = M.replace('  ',' ')
+        print M.upper()

@@ -2,6 +2,10 @@
 import pyowm
 owm = pyowm.OWM('9067d6794af11f1a696fe420647c0b95')
 
+#get time
+import time
+timenow = time.time()
+
 # Gathering Location
 location = str(input("Please enter the location of the area you are interested in "
                          "(Use the following format, Worcester,US): "))
@@ -25,8 +29,19 @@ def weatherGather(location):
     sunrise = w.get_sunrise_time('unix')  # Sunrise time (GMT UNIXtime or ISO 8601)
     # Sunset time (GMT UNIXtime or ISO 8601)
     sunset = w.get_sunset_time('unix')
-
-    print(sunrise)
+    tnow = int(timenow)
+    tsunrise = int(sunrise)
+    tsunset = int (sunrise)
+    if tnow < tsunrise:
+      t1 = round((float(tsunrise - tnow)/3600),1)
+      print('it is '+ str(t1) +'h before sunrise')
+    elif tnow < tsunset and tnow > tsunrise:      
+      t2 = round((float(tsunset - tnow)/3600),1)
+      print('it is '+ str(t2) +'h before sunset')
+    else:
+      t3 = round((float(tnow - tsunset)/3600),1)
+      print('it is '+ str(t3) +'h after sunset')
+    
 
     weatherData = [wind, humidity, clouds, pressure['press']]
     # sun = [sunrise, sunset]

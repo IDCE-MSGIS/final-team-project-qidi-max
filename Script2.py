@@ -31,7 +31,7 @@ def weatherGather(location):
     sunset = w.get_sunset_time('unix')
     tnow = int(timenow)
     tsunrise = int(sunrise)
-    tsunset = int (sunrise)
+    tsunset = int(sunrise)
     if tnow < tsunrise:
       t1 = round((float(tsunrise - tnow)/3600),1)
       print('it is '+ str(t1) +'h before sunrise')

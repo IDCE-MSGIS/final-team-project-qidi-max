@@ -1,4 +1,5 @@
 ## Final Project Documentaion:
+## Max Enger and Qidi Zhang
 ### National Weather Service: Five day Forecast
 
 The file NWS_script1.py is an enhanced version of the initial script given to us that scrapes the  five day weather forecast from the National Weather Service website. The previous version of the script only extracted information about the five day forecast, but did not include any spacing or placement correction. The script we created, included the necessary correction that enable the script to print out a neater version of the five day forecast description. It was a simple job to combine knowledge from previous labs to create this script, but it still took time for us to make sure that the spacing and placement were appropriate for certain weather phenomena. Our main challenge was making sure we included the instances of the phenomena we could think of, so we could account for the corrections in the output.

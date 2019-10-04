@@ -26,10 +26,35 @@ Make sure you are using Python version 2.7. You can check the Python version in 
 
 Remember to update the Script1.py file to include comments and documentation in your script to tell me what it’s doing!
 
-## Final Project: Script 2
-### Your Chosen Assignment
-For this script, you will complete the assignment that you have proposed, which involves modifying a previous exercise. Remember to update the Script2.py file to include comments and documentation in your script to tell me what it’s doing!
+
 
 ## Final Project: Documentation
-### Changing this README
-Your write-up will be here, on this README page. You will need to edit this page with your new text: you do **not** need to keep these instructions on your README! 
+### Script 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Script 2
+
+The second script that was designed for the final project utilized data from the open source platform, Open Weather Map. 
+
+
+

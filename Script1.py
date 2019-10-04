@@ -1,8 +1,8 @@
 '''
 # Max and Qidi
 # Final Project- Web-scraping Weather Forecast
-# Date: 09/23/2019
-# Description: The script web-scrapes the weather.gov website to extract the 5-Day weather    forecast for a given location
+# Date: 10/4/2019
+# The script web-scrapes the weather.gov website to extract the 5-Day weather    forecast for a given location
 # Inputs: Latitude & Longitude in Decimal Degrees
 # Outputs: 5-Day Weather Forecast
 # Time: 45 minutes
@@ -47,7 +47,7 @@ for i in weather_forecast:
     i = i.text
     forecast.append(i)
 
-#
+#Correcting the spacing, placement, and converting values into uppercase
 for day in forecast:
     forecast_list = day.split('\n\n')
     for M in forecast_list:
@@ -57,6 +57,7 @@ for day in forecast:
         M = M.replace('High',', High')
         M = M.replace('Low',', Low')
         M = M.replace('Chance',' Chance ')
+        M = M.replace('Cloudy',' Cloudy')
         M = M.replace('Likely',' Likely')
         M = M.replace('then',' then ')
         M = M.replace('  ',' ')

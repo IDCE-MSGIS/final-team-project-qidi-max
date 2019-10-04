@@ -1,3 +1,14 @@
+'''
+# Max and Qidi
+# Final Project- Open Weather Map data collection
+# Date: 10/4/2019
+# The following script gathers information from the Open Weather Map open source platform by using the weather API.
+# Inputs: Location Name
+# Outputs: Temperature, Humidity, Wind, Pressure, Temperature classification, and time to and from sunset/sunrise
+# Time: 6 hours
+'''
+
+#importing open weather map api and api key
 import pyowm
 owm = pyowm.OWM('9067d6794af11f1a696fe420647c0b95')
 

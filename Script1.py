@@ -1,10 +1,11 @@
+'''
 # Max and Qidi
 # Final Project- Web-scraping Weather Forecast
 # Date: 09/23/2019
 # Description: The script web-scrapes the weather.gov website to extract the 5-Day weather    forecast for a given location
 # Inputs: Latitude & Longitude in Decimal Degrees
 # Outputs: 5-Day Weather Forecast
-# Time:
+# Time: 45 minutes
 '''
 
 #import required libraries
@@ -45,14 +46,17 @@ weather_forecast = soup.findAll("li", {"class": "forecast-tombstone"})
 for i in weather_forecast:
     i = i.text
     forecast.append(i)
-    
+
+#
 for day in forecast:
     forecast_list = day.split('\n\n')
     for M in forecast_list:
         M = M.replace('\n',':')
+        M = M.replace('Night',' night')
+        M = M.replace('Afternoon',' Afternoon')
         M = M.replace('High',', High')
         M = M.replace('Low',', Low')
-        M = M.replace('Chance','Chance ')
+        M = M.replace('Chance',' Chance ')
         M = M.replace('Likely',' Likely')
         M = M.replace('then',' then ')
         M = M.replace('  ',' ')

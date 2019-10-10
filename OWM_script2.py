@@ -17,9 +17,9 @@ import time
 timenow = time.time()
 
 # Gathering Location
-location = str(input("Please enter the location of the area you are interested in "
-                     "(Use the following format, Worcester,US): "))
-print("The location entered: ", location)
+location = raw_input("Please enter the location of the area you are interested in "
+                     "(Use the following format, Worcester,US): ")
+print "The location entered: ", location
 
 
 # Create Function that utilizes user input and returns meteorological information for a specified location
@@ -44,13 +44,13 @@ def weatherGather(location):
     tsunset = int(sunrise)
     if tnow > tsunrise:
         t1 = round((float(tnow - tsunrise) / 3600), 1)
-        print('It is ' + str(t1) + 'h after sunrise')
+        print 'It is ' + str(t1) + 'h after sunrise'
     elif tnow < tsunset and tnow > tsunrise:
         t2 = round((float(tsunset - tnow) / 3600), 1)
-        print('It is ' + str(t2) + 'h before sunset')
+        print 'It is ' + str(t2) + 'h before sunset'
     else:
         t3 = round((float(tnow - tsunset) / 3600), 1)
-        print('It is ' + str(t3) + 'h after sunset')
+        print 'It is ' + str(t3) + 'h after sunset'
 
     weatherData = [wind, humidity, clouds, pressure['press']]
    
@@ -60,27 +60,27 @@ def weatherGather(location):
 
     # Assigning temperature to a condition category
     if t >= 100:
-        print('According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is hot.')
+        print 'According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is hot.'
     elif 70 <= t < 100:
-        print('According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is warm')
+        print 'According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is warm'
     elif 32 <= t < 70:
-        print(
-        'According to the most recent measurement, the temperature in ' + location + ' is:', t, ', which is temperate')
+        print
+        'According to the most recent measurement, the temperature in ' + location + ' is:', t, ', which is temperate'
     else:
-        print(
-        'According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is very cold')
+        print
+        'According to the most recent measurement, the temperature in ' + location + 'is:', t, ', which is very cold'
 
     if wind in weatherData:
-        print('The most recent measurements also indicate that the wind speed(mph) is: ', wind)
+        print 'The most recent measurements also indicate that the wind speed(mph) is: ', wind
 
     if humidity in weatherData:
-        print('The most recent measurements also indicate that the percent humidity is: ', humidity, '%')
+        print 'The most recent measurements also indicate that the percent humidity is: ', humidity, '%'
 
     if clouds in weatherData:
-        print('The most recent measurements also indicate that the percent cloud cover is: ', clouds, '%')
+        print 'The most recent measurements also indicate that the percent cloud cover is: ', clouds, '%'
 
     if pressure in weatherData:
-        print('The most recent measurements also indicate that the pressure is: ', pressure, 'mb')
+        print 'The most recent measurements also indicate that the pressure is: ', pressure, 'mb'
 
 
 weatherGather(location)
